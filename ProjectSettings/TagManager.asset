@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - 'Main Camera '
+  - Key
+  - Flashlight
   layers:
   - Default
   - TransparentFX

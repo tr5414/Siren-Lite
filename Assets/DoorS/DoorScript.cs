@@ -6,9 +6,11 @@ public class DoorScript : MonoBehaviour
 {
     public GameObject key;
     public Animator anim;
-    private int count; 
-   
-   // private int count;
+    private int count;
+    bool doorcheck = false;
+
+
+    // private int count;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,14 +22,28 @@ public class DoorScript : MonoBehaviour
         count++;
        
     }
-    // Update is called once per frame
     void Update()
+    {
+        if (Input.GetKey("e"))        {
+            //  Debug.Log("Text: butts");
+
+            //  if (keycheck = true)
+            if (doorcheck == true)
+            {
+                Debug.Log("Text: open");
+
+                anim.Play("Door_open");
+            }
+        }
+
+    }
+    // Update is called once per frame
+    void OnTriggerEnter(Collider other)
     {
         // if (count)
         if (key == null)
         {
-            anim.Play("OpenDoor");
-
+            doorcheck = true;
         }
     }
 }
